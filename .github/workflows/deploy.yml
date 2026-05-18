@@ -38,7 +38,6 @@ jobs:
           key: ${{ secrets.AWS_SSH_KEY }}
           script: |
             sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/tienda-frontendEv2F:latest
-            
             sudo docker stop tienda_frontEv2F || true
             sudo docker rm tienda_frontEv2F || true
             sudo docker run -d \
