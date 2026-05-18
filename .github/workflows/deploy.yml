@@ -38,6 +38,5 @@ jobs:
           key: ${{ secrets.AWS_SSH_KEY }} 
           script: |
             sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/tienda-frontendev2f:latest
-            sudo docker stop adoring_nobel || true
-            sudo docker rm adoring_nobel || true
+            sudo docker rm -f adoring_nobel || true
             sudo docker run -d -p 80:80 --name adoring_nobel ${{ secrets.DOCKERHUB_USERNAME }}/tienda-frontendev2f:latest
