@@ -33,13 +33,9 @@ jobs:
       - name: Desplegar en EC2 via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.EC2_FRONTEND_HOST }}
+          host: ${{ secrets.EC2_FRONTEND_HOST }} 
           username: ec2-user
-<<<<<<< HEAD
-          key: ${{ secrets.AWS_SSH_KEY }} #comentario de prueba
-=======
-          key: ${{ secrets.AWS_SSH_KEY }}
->>>>>>> ba1fe008357427112c5a52778d24069a92dbe69b
+          key: ${{ secrets.AWS_SSH_KEY }} #comentario de prueba2
           script: |
             sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/tienda-frontendev2f:latest
             sudo docker rm -f adoring_nobel || true
